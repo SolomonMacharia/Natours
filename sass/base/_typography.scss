@@ -37,6 +37,7 @@ body {
     display: inline-block;
     background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
     letter-spacing: 2px;
     transition: all .2s;
@@ -55,7 +56,7 @@ body {
 
 .paragraph {
     font-size: $default-font-size;
-    
+
     &:not(:last-child) {
         margin-bottom: 3rem;
     }
