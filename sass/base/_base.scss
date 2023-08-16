@@ -13,6 +13,17 @@ html {
     /* To avoid overwritting the browsers default font size, use percentages */
     /*To get 10px, divide 10 / 16 to get 62.5 */
     font-size: 62.5%; // 10px;
+    
+    @include respond(tab-land) { // width < 1200 ?
+        font-size: 56.25%; // 1rem = 9px, 9/16
+    }
+    
+    @include respond(tab-port) { // width < 900 ?
+        font-size: 20%; // 1rem = 8px, 8/16
+    }
+    @include respond(tab-land) {
+        font-size: 75%; // 1rem = 12px, 12/16
+    }
 }
 
 body {
