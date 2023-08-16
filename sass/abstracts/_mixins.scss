@@ -5,3 +5,48 @@
         clear: both;
     }
 }
+
+// MEDIA QUERY MANAGER
+
+/*
+0 - 600px       Phone
+600 - 900px     Tablet portrait
+900 - 1200px    Tablet landscape
+[1200 - 1800]   is where our normal styles apply
+1800px +        Big desktop
+
+*/
+
+
+@mixin respond($breakpoint) {
+    /*
+        - phone     (600 / 16) em(s)
+        - tab-port  (900 / 16)
+        - tab-land  (1200 / 16)
+        - big-desk  (1800 / 16)
+        
+        Media queries in px are not affected by browser font size, hence convert them to em(s).
+        
+        em(s) and rem(s) are not affected by the root font size.
+        
+        1em = 16px
+    */
+    
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) { @content }; //600px
+    }
+    
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em) { @content }; //900px
+
+    }
+    
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em) { @content }; //1200px
+        
+    }
+    
+    @if $breakpoint == big-desk {
+        @media (min-width: 112.5em) { @content }; //1800px
+    }
+}
