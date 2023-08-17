@@ -1,3 +1,11 @@
+/*
+0 - 600px       Phone
+600 - 900px     Tablet portrait
+900 - 1200px    Tablet landscape
+[1200 - 1800]   is where our normal styles apply
+1800px +        Big desktop
+
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -36,7 +44,52 @@
 html {
   /* To avoid overwritting the browsers default font size, use percentages */
   /*To get 10px, divide 10 / 16 to get 62.5 */
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  /*
+        - phone     (600 / 16) em(s)
+        - tab-port  (900 / 16)
+        - tab-land  (1200 / 16)
+        - big-desk  (1800 / 16)
+        
+        Media queries in px are not affected by browser font size, hence convert them to em(s).
+        
+        em(s) and rem(s) are not affected by the root font size.
+        
+        1em = 16px
+    */
+  /*
+        - phone     (600 / 16) em(s)
+        - tab-port  (900 / 16)
+        - tab-land  (1200 / 16)
+        - big-desk  (1800 / 16)
+        
+        Media queries in px are not affected by browser font size, hence convert them to em(s).
+        
+        em(s) and rem(s) are not affected by the root font size.
+        
+        1em = 16px
+    */
+  /*
+        - phone     (600 / 16) em(s)
+        - tab-port  (900 / 16)
+        - tab-land  (1200 / 16)
+        - big-desk  (1800 / 16)
+        
+        Media queries in px are not affected by browser font size, hence convert them to em(s).
+        
+        em(s) and rem(s) are not affected by the root font size.
+        
+        1em = 16px
+    */ }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 20%; } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
