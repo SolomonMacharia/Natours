@@ -2,7 +2,7 @@
     // One of the standards nowadaysis to make a 1140px grid.
     // Divide by 10 to convert into rem
 
-    max-width: $grid-width;  // Use max-widthinstead of width
+    max-width: $grid-width;  // Use max-width instead of width
 
     //  centers a block element inside a block element
     margin: 0 auto;
@@ -14,11 +14,29 @@
 
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
+            
+            @include respond(tab-port) {
+                margin-right: 0;
+                margin-bottom: $gutter-vertical-small;
+            }
+        }
+        
+        @include respond(tab-port) {
+            width: 100% !important;
         }
     }
 
     &:not(:last-child) {
         margin-bottom: $gutter-vertical;
+        
+        @include respond(tab-port) {
+            margin-bottom: $gutter-vertical-small;
+        }
+    }
+    
+    @include respond(tab-port) {
+        max-width: 50rem;
+        padding: 0 3rem;
     }
 
     @include clearfix;
